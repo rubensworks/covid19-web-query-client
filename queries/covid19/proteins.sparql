@@ -1,0 +1,11 @@
+# 1. Articles containing the word "protein"
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX covid19: <http://IBCNServices.github.io/covid19#>
+PREFIX ric: <https://www.ica.org/standards/RiC/ontology#>
+
+SELECT * WHERE {
+  ?article covid19:hasWords ?word.
+  ?article dct:identifier ?identifier.
+  ?article ric:publishedBy ?publisher.
+  FILTER REGEX(?word, "protein")
+}
